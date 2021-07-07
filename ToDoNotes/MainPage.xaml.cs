@@ -34,18 +34,24 @@ namespace ToDoNotes
                     FileName = filename
                 };
                 notes.Add(note);
-
             }
+            NotesListView.ItemsSource = notes.OrderBy(n => n.Date).ToList();
         }
 
-        private void NoteAddedClicked(object sender, SelectedItemChangedEventArgs e)
+        private async void OnNoteAddedClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushModalAsync (new AddNotesPage 
+            {
+                BindingContext = new Note()
+            });
         }
 
-        private void OnNoteItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void OnNoteItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            await Navigation.PushModalAsync(new AddNotesPage
+            {
+                BindingContext = (Note)e.SelectedItem
+            });
         }
     }
 }

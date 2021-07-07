@@ -4,10 +4,11 @@
              xmlns:model="clr-namespace:ToDoNotes.Models"
              x:Class="ToDoNotes.MainPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" Clicked="OnNoteAddedClicked" />
+        <!--<ToolbarItem Text="+" Clicked="OnNoteAddedClicked" />-->
     </ContentPage.ToolbarItems>
     
     <StackLayout>
+        <Button Text="Add Notes" Clicked="OnNoteAddedClicked" />
         <ListView x:Name="NotesListView"
                   Margin="20"
                   ItemSelected="OnNoteItemSelected">

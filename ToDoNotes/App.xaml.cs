@@ -10,8 +10,8 @@ namespace ToDoNotes
         {
             InitializeComponent();
 
-            //MainPage = new MainPage();
-            MainPage = new AddNotesPage();
+            MainPage = new MainPage();
+            //MainPage = new AddNotesPage();
         }
 
         protected override void OnStart()
